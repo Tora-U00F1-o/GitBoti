@@ -2,20 +2,29 @@
 """
 Combines multiple files .py into one. Removes comments and \n
 @author: Tora-U00F1-o
+
+Im not removing the prints (witch i used for debugging) because i dont care.
+And its cool to see 5 secs of words running light speed in the console
 """
 
-fileNames = ["Check.py", "Console.py", "PropertiesManager.py", "gtiBotiju.py"]
-# fileNames = ["Console.py","ejem.py"]
+filesToCombinePaths = ["../utils/Check.py", "../utils/Console.py", "../utils/PropertiesManager.py", "../gitBotiju.py"]
 
-def appendFile(f):
-    print("# -------    "+f.name  +"     ----------- \n")
-    resultFile = open("result.py", 'a')
+# get fileNames (remove paths and extension)
+fileNames = []
+for path in filesToCombinePaths:
+    nameArr = path.split("/")
+    name = nameArr[len(nameArr)-1]
+    fileNames.append(name.split(".py")[0])
+    
+resultFileName = "gitBotijuCombined.py"
+
+def appendFile(fileToAppend, resultFile):
+    print("# -------    "+fileToAppend.name  +"     ----------- \n")
     resultFile.write("# ------------------------------- \n")
-    resultFile.write("# -------    "+f.name  +"     ----------- \n")
-    resultFile.write("# ------------------------------- \n")
+    resultFile.write("# -------    "+fileToAppend.name  +"     ----------- \n")
     resultFile.write("# ------------------------------- \n")
     
-    for line in f:
+    for line in fileToAppend:
         if(len(line.strip()) == 0):
             continue
         if('#' in line and len(line.split('#')[0].strip()) == 0): # si es un comentario lo salta
@@ -25,12 +34,12 @@ def appendFile(f):
         print("\t -> hasMoreimp: .", line, ".")
         if("import" in line):
             print("\t ->\t -> import in line ")
-            args = line.split(" ")
-            print("\t ->\t -> ", args)
-            for arg in args:   
+            argsImport = line.split(" ")
+            print("\t ->\t -> ", argsImport)
+            for arg in argsImport:   
                 for name in fileNames:  
-                    print("\t ->\t ->\t -> ", name.split(".py")[0], " in ", arg)
-                    if(name.split(".py")[0] in arg):
+                    print("\t ->\t ->\t -> ", name, " in ", arg)
+                    if(name in arg):
                         writeLine = False
                         print("\t ->\t ->\t ->\t -> no print ")
                 
@@ -39,14 +48,13 @@ def appendFile(f):
             print("\t ->\t -> writed ")
             resultFile.write(line)
     resultFile.write("\n")
-    resultFile.close()
     
-    
-for name in fileNames:
-    f = open(name, 'r')
-    appendFile(f)
-    f.close()
+resultFile = open(resultFileName, 'w')
+for name in filesToCombinePaths:
+    fileToAppend = open(name, 'r')
+    appendFile(fileToAppend, resultFile)
+    fileToAppend.close()
 
-
+resultFile.close()
 
     
