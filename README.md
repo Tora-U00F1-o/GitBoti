@@ -16,3 +16,22 @@ Console app to perform git actions.
     - Crear una nueva rama
     - Cambiar de rama 
 
+## Modules used:
+
+| Name | Description |
+| ----------- | ----------- |
+| gitBotiju.py | Main module |
+| /utils/ | |
+| Check.py | Validators for objects [Strings, ...]|
+| Console.py | Console utils[^1] |
+| PropertiesManager.py | Manage a properties file |
+| /combined/ | |
+| Ajuntador.py | Combines multiple files .py into one. Removes comments and white lines. ModuleResult name is gitBotijuCombined.py |
+
+
+
+
+[^1]: Uses the module colorama $>pip install colorama
+
+
+
