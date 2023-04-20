@@ -23,15 +23,22 @@ Console app to perform git actions.
 | gitBotiju.py | Main module |
 | /utils/ | |
 | Check.py | Validators for objects [Strings, ...]|
-| Console.py | Console utils[^1] |
+| Console.py | Console utils |
 | PropertiesManager.py | Manage a properties file |
 | /combined/ | |
 | Ajuntador.py | Combines multiple files .py into one. Removes comments and white lines. ModuleResult name is gitBotijuCombined.py |
 
 
+## External modules
+Modules to install to use this app
+  - gitBotiju.py
+    - Colorama: >`pip install colorama`
+  - Console.py
+    - Colorama: >`pip install colorama`
+  - PropertiesManager.py
+    - Configparser: >`pip install configparser`
 
 
-[^1]: Uses the module colorama $>pip install colorama
 
 
 
