@@ -1,5 +1,8 @@
 # -*- coding: utf-8 -*-
 """
+Manage a properties file
+gitNameKey and gitEmailKey are not used
+
 @author: Tora-U00F1-o
 """
 

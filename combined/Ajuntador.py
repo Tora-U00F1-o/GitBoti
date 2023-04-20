@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 """
-Combines multiple files .py into one. Removes comments and \n
+Combines multiple files .py into one. Removes comments and white lines
 @author: Tora-U00F1-o
 
 Im not removing the prints (witch i used for debugging) because i dont care.

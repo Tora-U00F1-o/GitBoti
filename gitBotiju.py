@@ -1,12 +1,15 @@
+# -*- coding: utf-8 -*-
+"""
 
+
+@author: Tora-U00F1-o
+"""
 import subprocess
 import sys
 import os
-import configparser
 import colorama
 from Console import *
 from PropertiesManager import *
-
 
 # =============================================================================
 # Aqui es donde sucede la magia
