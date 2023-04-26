@@ -31,14 +31,9 @@ Console app to perform git actions.
 
 ## External modules
 Modules to install to use this app
-  - gitBotiju.py
-    - Colorama: >`pip install colorama`
-  - Console.py
-    - Colorama: >`pip install colorama`
-  - PropertiesManager.py
-    - Configparser: >`pip install configparser`
 
-
-
-
-
+  - Colorama: >`pip install colorama`
+    - gitBotiju.py
+    - Console.py
+  - Configparser: >`pip install configparser`
+    - PropertiesManager.py
